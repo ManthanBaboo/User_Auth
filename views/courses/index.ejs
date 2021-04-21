@@ -1,0 +1,53 @@
+<div class="text-center">
+    <h2>Course Table</h2>
+
+    <a href="/courses/new">
+        <span class="button">
+            Create new
+        </span>
+    </a>
+</div> <br>
+
+
+<table class="table">
+    <thread>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Maximum Students</th>
+            <th>Cost</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thread>
+    <tbody>
+        <% courses.forEach(course => { %>
+            <tr>
+                <td>
+                    <a href="<%= `/courses/${course._id}` %>">
+                        <%= course.title %>
+                    </a>
+                </td>
+                <td>
+                    <%= course.description %>
+                </td>
+                <td>
+                    <%= course.maxStudent %>
+                </td>
+                <td>
+                    <%= course.cost %>
+                </td>
+                <td>
+                    <a href="<%= `/courses/${course._id}/edit` %>">
+                        Edit
+                    </a>
+                </td>
+                <td>
+                    <a href="<%= `/courses/${course._id}/delete?_method=DELETE` %>" onClick="return confirm('Are you sure? This will delete the course forever.')">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+<div class="text-center">
+    <h2> Edit Course </h2>
+</div>
+
+<div class="form-data container">
+    <form action="<%= `/courses/${course._id}/update?_method=PUT`%>" method="POST"> <br>     
+        <label for="txtTitle">Title</label>
+        <input type="text" class="form-control" name="title" id="txtTitle" autofocus required value="<%= course.title %>"> <br> 
+
+        <label for="txtDescription">Description</label>
+        <input type="text" class="form-control" name="description" id="txtDescription" required value="<%= course.description %>"> <br>
+
+        <label for="txtMaxStudent">Maximum Students</label>
+        <input type="text" class="form-control" name="maxStudent" id="txtMaxStudent" required value="<%= course.maxStudent %>"> <br>
+
+        <label for="txtCost">Cost</label>
+        <input type="text" class="form-control" name="cost" id="txtCost" required value="<%= course.cost %>"> <br>
+
+        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn" type="reset">Reset</button>
+    </form>
+</div>

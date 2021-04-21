@@ -1,0 +1,22 @@
+<div class="text-center">
+    <h2> Create Course </h2>
+</div>
+
+<div class="form-data container">
+    <form action="/courses/create" method="POST">
+        <label for="txtTitle">Title</label>
+        <input type="text" class="form-control" name="title" id="txtTitle" autofocus required> <br>
+
+        <label for="txtDescription">Description</label>
+        <input type="text" class="form-control" name="description" id="txtDescription" required><br>
+
+        <label for="txtMaxStudent">Maximum Students</label>
+        <input type="text" class="form-control" name="maxStudent" id="txtMaxStudent" required><br>
+
+        <label for="txtCost">Cost</label>
+        <input type="text" class="form-control" name="cost" id="txtCost" required><br>
+        
+        <button class="btn btn-primary" type="submit">Create</button>
+        <button class="btn" type="reset">Reset</button>
+    </form>
+</div>

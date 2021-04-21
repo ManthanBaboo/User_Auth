@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Confetti Cuisine
+    </title>
+    <link rel="stylesheet" href="/css/confetti_cuisine.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="nav">
+        <div class="col-sm nav-align">
+            <h1>
+                Confetti Cuisine
+            </h1>
+        </div>
+        <div class="col-sm nav-align">
+            <a href="/">
+                <span class="button">
+                    Home
+                </span>
+            </a>
+            <a href="/courses">
+                <span class="button">
+                    Courses
+                </span>
+            </a>
+            <!-- <a href="/users/new">
+                    <span class="button">
+                        Contact
+                    </span>
+                </a> -->
+            <a href="/users">
+                <span class="button">
+                    Users
+                </span>
+            </a>
+            <a href="/subscribers">
+                <span class="button">
+                    Subscribers
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <div class="text-right login">
+        <% if (loggedIn) { %>
+            <p> Logged in as <a href="<%=`/users/${currentUser._id}`%>"> 
+                <%= currentUser.fullName %>
+            </a>
+            <span class="log-out">
+                <a href="users/logout"> Log Out </a> 
+            </span>
+            
+        <% } else { %>
+        <a href="/users/login"> Log In </a>
+        <% } %>
+    </div>
+
+    <div class="text-right flashes">
+        <br>
+        <% if(flashMessages) { %>
+            <% if(flashMessages. success) { %>
+                <div class="flash success">
+                    <%= flashMessages.success %>
+                </div>
+            <% } else if(flashMessages.error) { %>
+                <div class="flash error">
+                    <%= flashMessages.error %>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+
+    <br>
+    <div class="container">
+        <%- body %>
+    </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

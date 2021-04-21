@@ -1,0 +1,25 @@
+<div class="text-center">
+    <h2> Edit User </h2>
+</div>
+
+<div class="form-data container">
+    <form action="<%= `/users/${user._id}/update?_method=PUT`%>" method="POST">        
+        <label for="txtFirstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" id="txtFirstName" autofocus required value="<%= user.firstName %>"> <br>
+        
+        <label for="txtLastName">Last Name</label>
+        <input type="text" class="form-control" name="lastName" id="txtLastName" autofocus required value="<%= user.lastName %>"> <br>
+
+        <label for="txtEmail">Email</label>
+        <input type="text" class="form-control" name="email" id="txtEmail" required value="<%= user.email %>"> <br>
+
+        <label for="txtZipCode">Zip Code</label>
+        <input type="text" class="form-control" name="zipCode" id="txtZipCode" required value="<%= user.zipCode %>"> <br>
+
+        <label for="txtPassword">Password</label>
+        <input type="text" class="form-control" name="password" id="txtPassword" required value="<%= user.password %>"> <br>
+
+        <button class="btn btn-primary" type="submit">Save</button>
+        <button class="btn" type="reset">Reset</button>
+    </form>
+</div>
